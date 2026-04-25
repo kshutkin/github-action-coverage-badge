@@ -1,0 +1,37 @@
+# Example: standalone coverage-badges workflow
+#
+# Drop this into .github/workflows/coverage-badges.yml in any repo whose
+# tests produce one or more `coverage/` folders.
+
+name: Coverage badges
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    badges:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - run: npm install -g pnpm@10.x
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: lts/*
+                  cache: pnpm
+            - run: pnpm install --frozen-lockfile --prefer-offline
+            - run: pnpm --if-present test
+
+            - uses: kshutkin/github-action-coverage-badge@v1
+              with:
+                  metric: branches
+                  # Optional overrides:
+                  # branch: coverage
+                  # label: coverage
+                  # precision: 1
+                  # thresholds: "60:red,80:yellow,100:brightgreen"

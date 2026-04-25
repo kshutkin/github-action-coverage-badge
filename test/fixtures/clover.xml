@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="0" clover="3.2.0">
+  <project timestamp="0" name="All files">
+    <metrics statements="120" coveredstatements="90" conditionals="40" coveredconditionals="30" methods="20" coveredmethods="18" elements="180" coveredelements="138" complexity="0" loc="0" ncloc="0" classes="0" files="0" packages="0"/>
+  </project>
+</coverage>

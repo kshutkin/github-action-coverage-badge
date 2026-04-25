@@ -1,0 +1,20 @@
+{
+  "name": "github-action-coverage-badge",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "GitHub Action that generates coverage badges from coverage reports and pushes them to an orphan branch.",
+  "license": "MIT",
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsc -p ."
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
