@@ -33,7 +33,7 @@ describe("renderBadge", () => {
         const small = renderBadge({ label: "a", value: "1%", color: "#000" });
         const big = renderBadge({ label: "very long label", value: "100%", color: "#000" });
         /** @param {string} s */
-        const widthOf = (s) => Number(/width="(\d+)"/.exec(s)?.[1]);
+        const widthOf = (s) => Number(/width="([\.\d]+)"/.exec(s)?.[1]);
         expect(widthOf(big)).toBeGreaterThan(widthOf(small));
     });
 
